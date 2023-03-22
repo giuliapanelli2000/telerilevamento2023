@@ -15,8 +15,8 @@ getwd ()
 l2011 <- brick("p224r63_2011_masked.grd")
 plot (l2011)
 cl <- colorRampPalette (c("red", "orange", "yellow")) (100) 
-# per cambiare i colori, abbiamo tre colori di base e le diverse sfumature
-# abbinare il cambio di colori alle carte, assieme alle 100 sfumature diverse
+# serve per modificare i colori, si parte da  tre colori di base e si hanno poi le diverse sfumature
+# si abbina il cambio di colori alle carte, assieme alle 100 sfumature diverse
 plot (l2011)
 
 #tracciare un elemento
@@ -26,7 +26,7 @@ nir <- l2011 [[4]] #oppure nir <- l2011$B4_sre
 plot (nir, col = cl)
 
 # giorno 16/03/23
-cl <- colorRampPalette(c("darkorchid","cyan","bisque","darkmagenta","cyan4")) (200)    #cambio nuovamente i colori scegliendo 5 colori diversi e mettendo 200 sfumature e le ho attribuite a cl
+cl <- colorRampPalette(c("darkorchid","cyan","bisque","darkmagenta","cyan4")) (200)    # 5 colori diversi e mettendo 200 sfumature attribuite a cl
 plot(l2011, col=cl)                                                                    #Plot02
 
 #exercise plot the NIR band
@@ -37,11 +37,11 @@ plot(l2011, col=cl)                                                             
 
 # Doppia parentesi quadra, plotto solo l'immagine dell'infrarosso vicino
 plot(l2011[[4]], col=cl)
-plot(l2011$B4_sre, col=cl)        #fa la stessa cosa del plot precdente
+plot(l2011$B4_sre, col=cl)        #fa la stessa cosa del plot precedente
 
 #Export graphs da R alla cartella lab salvata e creata a inizio corso tramite (Plot03):
 pdf("myfirstgraph.pdf")           #png fa la stessa cosa -> cambia solo il format
-plot(l2011$B4_sre, col=cl)        #salverà nella cartella lab il plot che si scriverà
+plot(l2011$B4_sre, col=cl)        #si salva nella cartella lab il plot che si scriverà
 dev.off()                         #per chiudere il tutto 
 
 #PROVA:
@@ -49,8 +49,8 @@ pdf("ciao.pdf")
 plot(l2011$B4_sre, col=cl)
 dev.off()                         #ottengo un file pdf che si chiama ciao
 
-#Ora proverò a plottare banda del rosso e infrarosso (MULTIFRAME -> mf), row -> numero di righe, utilizzeremo una sola colonna.
-#La funzione che fa tutto ciò si chiama "par"
+#plotto banda del rosso e infrarosso (MULTIFRAME -> mf), row -> numero di righe, utilizzo una sola colonna.
+#La funzione per fare questo si chiama "par"
 #Otterrò 2 righe e una colonna
 #Plotting several bands in a multiframe
 
@@ -58,7 +58,7 @@ par(mfrow=c(2,1))                 #Plot04
 plot(l2011[[3]], col=cl)
 plot(l2011[[4]], col =cl)
 
-#Invece di fare un plot con le due bande, lo faremo con tutte  e 4 (sarà quindi: 2,2) le bande, faremo quindi un nuovo multiframe:
+#Invece di fare un plot con le due bande, lo facciamo con tutte e 4 (sarà quindi: 2,2) le bande, faremo quindi un nuovo multiframe:
 par(mfrow=c(2,2)) #Per fare uscire tutte e 4 i plot assieme
 
 #Plottiamo il blu (plot05)
@@ -86,7 +86,9 @@ library(raster)
 setwd("C:/Telerilevamento_lab")
 l2011 <- brick ("p224r63_2011_masked.grd")
 #faremo una immagine a colori naturali, associamo ad ogni componente la banda corrispondente.
-#RGB plotting, plottiamo un raster con le tre componenti di colore.Per aver informazioni sulle funzioni digita prima della funzione stessa: ?     Alla componente 3 diamo la banda numero 3, alla verde la 2, alla blu la 1.
+#RGB plotting, plottiamo un raster con le tre componenti di colore.
+# ? per avere info su funzioni
+#Alla componente 3 diamo la banda numero 3, alla verde la 2, alla blu la 1.
 #strecht per allargare il più possibile la scala di colore lineare.
 plotRGB(l2011, r=3, g=2, b=1, stretch="Lin") #plot09
 #Ora evidenziamo la vegetazione (usiamo una delle bande che identifichi al meglio la vegetazione, useremo l'infrarosso (banda numero4) per evidenziare la vegetazione)
