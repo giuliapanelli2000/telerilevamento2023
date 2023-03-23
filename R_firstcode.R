@@ -110,3 +110,65 @@ plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")  #plot14
 par(mfrow=c(2,1))
 plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")
 plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")   #plot15
+
+#giorno 23/03/2023
+library(raster)
+setwd ("C:/Telerilevamento_lab/p224r63_2011")
+getwd ()
+
+l2011 <- brick("p224r63_2011_masked.gri")
+l2011
+
+#esercizio nir per una banda
+plot(l2011[[4]])
+
+plotRGB(l2011, r=3, g=2, b=1, stretch="Lin") #stretch aumenta la gamma dei colori utilitizzabili
+
+#usiamo bande colori diversi, bande che noi no vediamo, posso usare al massimo 3 bande
+
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin") #abbiamo messo infrarosso 4 sul rosso     
+#monto l'infrarosso su un'altra componente, cioè la banda numero 4
+plotRGB(l2011, r=3, g=4, b=2, stretch="Lin")
+#mettiamo sulla componente blu
+plotRGB(l2011, r=3, g=2, b=4, stretch="Lin")
+#si osservano zone agricole gialle
+
+#esercizio : importa the 1988 image
+library(raster)
+setwd ("C:/Telerilevamento_lab")
+getwd ()
+
+l1988 <- brick("p224r63_1988_masked.gri")
+l1988
+
+
+#eserzio : plot in RGB space (natural colours)
+
+plotRGB (l1988, r=3, g=2, b=1, stretch="Lin")
+
+plotRGB (l1988, r=4, g=3, b=2, stretch="Lin")
+
+
+plotRGB (l1988, 4, 3, 2, stretch="Lin")
+
+#metodi per mettere grafici assiemeù
+#multiframe
+#uso due righe e una colonna, voglio sovrapporre immagini
+par(mfrow=c(2,1))
+plotRGB (l1988, 4, 3, 2, stretch="Lin")
+plotRGB(l2011, 4, 3, 2, stretch="Lin")
+dev.off() #chiudi le finetre aperte
+ #variazioni tra le code e l'inizio . differenza tra valori medi ed estremi stretch="hist")
+#differenza media e mediana: media (somma numero diviso N) mediana (mantengo il valore centrale per evitare che numero esterno mi cambi la media)
+
+plotRGB(l2011, 4, 3, 2, stretch="hist")
+
+# faccio due righe e due colonne, immagine 88 con strtch lienari, nel seconno 2011 con strtch lienare, nel terzo  nel quarto 88 e 2011 con strect hist
+#con infrarosso sulla componente red
+
+par(mfrow=c(2,2))
+plotRGB (l1988, 4, 3, 2, stretch="Lin")
+plotRGB(l2011, 4, 3, 2, stretch="Lin")
+plotRGB(l1988, 4, 3, 2, stretch="hist")
+plotRGB(l2011, 4, 3, 2, stretch="hist")
+
