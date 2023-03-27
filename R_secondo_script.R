@@ -38,3 +38,16 @@ dvil1992
 cl <- colorRampPalette(c('darkblue','yellow','red','black'))(100) # specifying a color scheme
 
 plot (dvil1992, col=cl)
+
+# eseguo lo stesso esercizio con Defor2
+
+l2006 <- brick("defor2_.png")
+l2006 
+
+plotRGB(l2006, r=1, g=2, b=3, stretch="Lin")
+
+dvil2006 = l2006[[1]]- l2006 [[2]]
+dvil2006
+cl <- colorRampPalette(c('darkblue','yellow','red','black'))(100) # specifying a color scheme
+
+plot (dvil2006, col=cl)
