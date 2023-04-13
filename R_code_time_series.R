@@ -49,3 +49,62 @@ plot(dift)
 
 cl <- colorRampPalette(c("blue","light blue","pink","red"))(100) #cambio la scala di colore alle quattro immagini degli anni diversi per notare meglio lo scioglimento dei ghiacciai
 plot(TGr, col=cl)
+
+13/04
+# es.2: eurpean NO2
+
+install.packages("raster")
+install.packages("rasterVis")
+library(raster)
+library(rasterVis)
+#library(rgdal)
+setwd("C:/Telerilevamento_lab/En")
+#analisi nutitemporale della varaizone dei dati (di ossidi di azoto) en nel tempo. 
+getwd()# per controlllare se è salvato
+
+#importing a file 
+# per importare i file all'interno da R si una la funziona brick (quando ho un ummagine satellitare a più strati)
+#si usa raster per importare una sola immagine
+
+en_first <- raster ("EN_0001.png")
+en_first
+# creiamo palette d colori 
+cl <- colorRampPalette(c("red","orange","yellow"))(100)
+plot(en_first, col=cl)
+#facciamo una serie di file con il patter EN, abbiamo una lista per applicare il raster e creiamo uno stack 
+#lapplay applica una funzione ad una lista
+lst()
+rlist <- list.files(pattern="EN")
+rlist
+
+import <- lapply(rlist, raster)   #lapply applica alla lista di file la funzione raster
+import
+stack(import)    #invece di importare i singoli file, faccio una lista di file dentro la cartella, importo tutto insieme e faccio lo stack
+EN <- stack(import)
+EN
+plot(EN)
+
+plot (EN, col=cl)
+ #per accostare immagni
+par (mfrow=c(1,2))
+plot (en_first,col=cl) 
+#l'immagine che abbiamo importato per prima deve essere uguale all'altra seno risuta sbagliato
+plot (EN[[1]], col=cl)
+
+#controllo 
+difcheck <- en_first - EN[[1]]
+difcheck
+plot(difcheck)
+
+#primo e ultimo dato
+par (mfrow=c(1,2))
+plot (en_first,col=cl)
+plot (EN[[13]], col=cl)
+
+#differenza dati per vedere diminuzione maggiore
+difen <- EN [[1]]-EN[[13]]
+difen
+cldif <- colorRampPalette(c('blue', 'white','red')) (100)
+plot (difen, col=cldif)
+
+plotRGB(EN, r=1, g=7, Bb=13, stretch='Lin')# prende i valori originale e apprilìca una funzione lienare per cambiare il range
