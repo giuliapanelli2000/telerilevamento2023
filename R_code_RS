@@ -25,8 +25,8 @@ plot (l2011 $ b4_sre, col=cl) #il dollaro lega dei pezzi fra loro
 nir <- l2011 [[4]] #oppure nir <- l2011$B4_sre
 plot (nir, col = cl)
 
-# giorno 16/03/23
-cl <- colorRampPalette(c("darkorchid","cyan","bisque","darkmagenta","cyan4")) (200)    # 5 colori diversi e mettendo 200 sfumature attribuite a cl
+# giorno 16/03/23: esercizio: cambiare la gamma di colori per tutte le immagini
+cl <- colorRampPalette(c("darkorchid,"cyan","bisque","darkmagenta","cyan4")) (200)    # 5 colori diversi e mettendo 200 sfumature attribuite a cl
 plot(l2011, col=cl)                                                                    #Plot02
 
 #exercise plot the NIR band
@@ -39,7 +39,7 @@ plot(l2011, col=cl)                                                             
 plot(l2011[[4]], col=cl)
 plot(l2011$B4_sre, col=cl)        #fa la stessa cosa del plot precedente
 
-#Export graphs da R alla cartella lab salvata e creata a inizio corso tramite (Plot03):
+#Export graphs da R alla cartella lab salvata e creata a inizio corso tramite:
 pdf("myfirstgraph.pdf")           #png fa la stessa cosa -> cambia solo il format
 plot(l2011$B4_sre, col=cl)        #si salva nella cartella lab il plot che si scriverà
 dev.off()                         #per chiudere il tutto 
@@ -52,9 +52,9 @@ dev.off()                         #ottengo un file pdf che si chiama ciao
 #plotto banda del rosso e infrarosso (MULTIFRAME -> mf), row -> numero di righe, utilizzo una sola colonna.
 #La funzione per fare questo si chiama "par"
 #Otterrò 2 righe e una colonna
-#Plotting several bands in a multiframe
 
-par(mfrow=c(2,1))                 #Plot04
+#Plotting several bands in a multiframe
+par(mfrow=c(2,1))                 
 plot(l2011[[3]], col=cl)
 plot(l2011[[4]], col =cl)
 
@@ -77,7 +77,7 @@ plot(l2011[[3]], col=clr)
 cln <- colorRampPalette(c("darkorchid","darkorchid1","darkorchid2","darkorchid3")) (100)
 plot(l2011[[1]], col=cln)
 
-#OTTERO' COME RISULTATO LE QUATTRO MAPPE PLOTTATE CON BASE CROMATICA A DIFFERENTI COLORI (INFRAROSSO,ROSSO,VERDE E BLU) (Plot08)
+#OTTERO' COME RISULTATO LE QUATTRO MAPPE PLOTTATE CON BASE CROMATICA A DIFFERENTI COLORI (INFRAROSSO,ROSSO,VERDE E BLU)
 
 
 # giorno 17/03/23
@@ -90,26 +90,26 @@ l2011 <- brick ("p224r63_2011_masked.grd")
 # ? per avere info su funzioni
 #Alla componente 3 diamo la banda numero 3, alla verde la 2, alla blu la 1.
 #strecht per allargare il più possibile la scala di colore lineare.
-plotRGB(l2011, r=3, g=2, b=1, stretch="Lin") #plot09
+plotRGB(l2011, r=3, g=2, b=1, stretch="Lin")
 #Ora evidenziamo la vegetazione (usiamo una delle bande che identifichi al meglio la vegetazione, useremo l'infrarosso (banda numero4) per evidenziare la vegetazione)
-plotRGB(l2011, r=4, g=3, b=2, stretch="Lin") #plot10  #tutto quello che riflette molto nella banda numero 4 (infrarossso) diventerà rosso.
-plotRGB(l2011, r=3, g=4, b=2, stretch="Lin") #plot11  #per mostrare l'infrarosso in verde  enon con il rosso
-plotRGB(l2011, r=3, g=2, b=4, stretch="Lin")  #plot12 per mostrare l'infrarosso in blue
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")   #tutto quello che riflette molto nella banda numero 4 (infrarossso) diventerà rosso.
+plotRGB(l2011, r=3, g=4, b=2, stretch="Lin")   #per mostrare l'infrarosso in verde  enon con il rosso
+plotRGB(l2011, r=3, g=2, b=4, stretch="Lin")  # per mostrare l'infrarosso in blue
 
 #Multiframe with natural and false colours per vedere i due plot confrontati.
 par(mfrow=c(2,1))
 plotRGB(l2011, r=3, g=2, b=1, stretch="Lin")
-plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")   #plot13
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")   
 
 #Histogram stretching Hist al posto di lin
 par(mfrow=c(2,1))
 plotRGB(l2011, r=3, g=2, b=1, stretch="Hist")
-plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")  #plot14
+plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")  
 
 #Lin vs Hist
 par(mfrow=c(2,1))
 plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")
-plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")   #plot15
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")   
 
 #giorno 23/03/2023
 library(raster)
