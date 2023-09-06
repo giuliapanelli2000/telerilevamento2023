@@ -1,4 +1,4 @@
-#come scaricare una immagine da copernicus e vederla in R
+#come scaricare una im da copernicus e vederla in R
 library(raster)
 
 install.packages("ncdf4")   #installazione 
