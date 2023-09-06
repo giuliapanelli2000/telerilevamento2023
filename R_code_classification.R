@@ -1,5 +1,6 @@
 
 library(raster)                    #raster porta dentro R solo singoli strati, brick invece tira dentro dati con diversi livelli
+
 setwd("C:/Telerilevamento_lab")    #setting working directory
 getwd()
 so <- brick("Solar_Orbiter.jpg")  # importare immagine della solar_orbiter(so)
