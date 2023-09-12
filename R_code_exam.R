@@ -1,6 +1,6 @@
 # Good morning! I'm Giulia and this is my Rproject for the exam of Telerilevamento Geo_Ecologico 2023.  
-# The immages is from Copernicus, sentinel 2
-# Firt of all I need setting my working directory
+# The immages is from Copernicus, Sentinel 2
+# Firts of all I need setting my working directory
 
 # Immage from 2022
 
@@ -20,17 +20,17 @@ Hy22
 # Hy stay for Hymalaia, immage 2022
 
 plotRGB(Hy22, 1, 2, 3, stretch="Lin")
-# Make Red-Green_Blue plot. Use a stretch lineare 
+# Make Red-Green_Blue plot. Use a linear stretch 
 
-# I want to classify the immage in three class of three different type of rock
+# I want to classify the immage in two class: substrate and ice cover (name:glacier)
 # First I get all sigle value in the immage
 
 singlenr1 <- getValues(Hy22)
 singlenr1
 
-View(singlenr1) # to see the single values divide in three columns
+View(singlenr1) # to see the single values divide in columns
 
-# Now, I need to classify. The fuction used to divide the pixel in different class based on the mean of the value, in three class
+# Now, I need to classify. The fuction used to divide the pixel in different class based on the mean of the value, in two class
 
 kcluster1 <- kmeans(singlenr1, centers = 2)
 kcluster1
@@ -39,21 +39,21 @@ Hy22class <- setValues(Hy22[[1]], kcluster1$cluster)
 Hy22class
 # to assign new values to a raster object
 
-#I decide the three color used to identify the two class
+#I decide the colors used to identify the two class
 cl <- colorRampPalette(c('grey','yellow','blue'))(100)
 plot(Hy22class, col=cl)
 
 # class 1 : substrate-grey
 # class 2 : glacier-blue
 
-# Now i need to estimate the frequencies of the different class. To do this, I need the total number of the cell in che immage
+# Now I need to estimate the frequencies of the different class. To do this, I need the total number of the cell in the immage
 frequencies1 <- freq(Hy22class)
 frequencies1
 
 total1 = ncell (Hy22class)
 total1
 
-# total number of pixel of the immage (I need the total number to do the percentages of the three different class)
+# total number of pixel of the immage (I need the total number to do the percentages of the two different class)
 percentages1= frequencies1 * 100 / total1
 percentages1
 
