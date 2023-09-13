@@ -36,8 +36,8 @@ Gli obiettivi principali di questo progetto sono: \\
 \begin{frame}{Metodi}
 I metodi utilizzati sono:
 \begin{itemize}
-    \item dowloand delle immagini satellitari da Sentinel 2
-    \item visuallizzazione delle immagini in colori naturali
+    \item download delle immagini satellitari da Sentinel 2
+    \item visualizzazione delle immagini in colori naturali
     \item classificazione per l'immagine 2022: substrato e copertura glaciale
     \item classificazione per l'immagine 2023: substrato e copertura glaciale
     \item percentuale delle due classi nel 2022
@@ -222,7 +222,7 @@ La classificazione è stata eseguita nello stesso modo con cui si è lavorato pe
 \section{Conclusioni}
 \begin{frame}{Conclusioni}
 
-I risultati ottenuti mostrano chiaramente che oggi, nel 2023, la catena Hymaliana è caratterizzata da una copertura glaciale maggiore rispetto che nel 2022. I ghiacciai riscoprono il substrato per un 20 \% in più ripetto che nel 2022.
+I risultati ottenuti mostrano chiaramente che oggi, nel 2023, la catena Hymaliana è caratterizzata da una copertura glaciale maggiore rispetto al 2022. I ghiacciai ricoprono il substrato per un 20 \% in più rispetto al 2022.
     
 \end{frame}
 
@@ -235,4 +235,5 @@ I risultati ottenuti mostrano chiaramente che oggi, nel 2023, la catena Hymalian
 \end{frame}
 
 \end{document}
+
 
