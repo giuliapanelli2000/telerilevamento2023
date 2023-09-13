@@ -123,7 +123,7 @@ percent_2023 <- c(60, 40)
 percentages <- data.frame (cover, percent_2022, percent_2023)
 percentages
 
-# Let's plot the grafics
+# Let's plot the graphs
 
 ggplot (percentages, aes (x=cover, y=percent_2022, color=cover)) + geom_bar (stat="identity", fill= "beige") + labs(title = "Hymalaia_2022")
 
