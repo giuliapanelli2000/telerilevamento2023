@@ -188,7 +188,7 @@ La classificazione è stata eseguita nello stesso modo con cui si è lavorato pe
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{grafici1.png}
+    \includegraphics[width=\textwidth]{cod_graphs.png}
    
 \end{figure}
 
@@ -222,7 +222,7 @@ La classificazione è stata eseguita nello stesso modo con cui si è lavorato pe
 \section{Conclusioni}
 \begin{frame}{Conclusioni}
 
-I risultati ottenuti mostrano chiaramente che oggi, nel 2023, la catena Hymaliana è caratterizzata da una copertura glaciale maggiore rispetto al 2022. I ghiacciai ricoprono il substrato per un 20 \% in più rispetto al 2022.
+I risultati ottenuti mostrano chiaramente che oggi, nel 2023, la catena Hymaliana è caratterizzata da una copertura glaciale maggiore rispetto al 2022. I ghiacciai ricoprono il substrato per un 20 \% in meno rispetto al 2022.
     
 \end{frame}
 
