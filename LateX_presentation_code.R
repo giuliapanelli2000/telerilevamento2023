@@ -217,6 +217,16 @@ La classificazione è stata eseguita nello stesso modo con cui si è lavorato pe
    
 \end{figure}
 \end{frame}
+
+\begin{frame}{Confronto tra grafici}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{grafico_2022.jpg}  \\
+    \includegraphics[width=0.7\textwidth]{grafico_2023.jpg}
+\end{figure}
+\end{frame}
+
 \section{Conclusioni}
 \begin{frame}{Conclusioni}
 
