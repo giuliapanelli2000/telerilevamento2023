@@ -22,15 +22,15 @@ Hy22
 plotRGB(Hy22, 1, 2, 3, stretch="Lin")
 # Make Red-Green_Blue plot. Use a stretch lineare 
 
-# I want to classify the immage in three class of three different type of rock
+# I want to classify the immage in two classes
 # First I get all sigle value in the immage
 
 singlenr1 <- getValues(Hy22)
 singlenr1
 
-View(singlenr1) # to see the single values divide in three columns
+View(singlenr1) # to see the single values divide in two columns
 
-# Now, I need to classify. The fuction used to divide the pixel in different class based on the mean of the value, in three class
+# Now, I need to classify. The fuction used to divide the pixel in different class based on the mean of the value, in two class
 
 kcluster1 <- kmeans(singlenr1, centers = 2)
 kcluster1
@@ -39,21 +39,21 @@ Hy22class <- setValues(Hy22[[1]], kcluster1$cluster)
 Hy22class
 # to assign new values to a raster object
 
-#I decide the three color used to identify the two class
+#I decide the two color used to identify the two class
 cl <- colorRampPalette(c('grey','yellow','blue'))(100)
 plot(Hy22class, col=cl)
 
 # class 1 : substrate-grey
 # class 2 : glacier-blue
 
-# Now i need to estimate the frequencies of the different class. To do this, I need the total number of the cell in che immage
+# Now I need to estimate the frequencies of the different class. To do this, I need the total number of the cell in The immage
 frequencies1 <- freq(Hy22class)
 frequencies1
 
 total1 = ncell (Hy22class)
 total1
 
-# total number of pixel of the immage (I need the total number to do the percentages of the three different class)
+# total number of pixel of the immage (I need the total number to do the percentages of the two different classes)
 percentages1= frequencies1 * 100 / total1
 percentages1
 
