@@ -23,11 +23,9 @@ La catena Hymaliana è un orogene derivante dalla collisone continentale tra la 
 \begin{frame}{Obiettivi principali}
 Gli obiettivi principali di questo progetto sono: \\
 \begin{itemize}
-    \item analisi immagine 2022
-    \item analisi immagine 2023
-    \item percentuale copertura glaciale nel 2022
-    \item percentuale copertura glaciale nel 2023
-    \item confronto dei risultati in due periodi diversi
+    \item analisi e classificazione delle immagini del 2022 e del 2023
+    \item calcolo della percentuale di substrato e copertura glaciale nel 2022 e nel 2023
+    \item confronto dei dati ottenuti
 \end{itemize}   
 \end{frame}
 
@@ -130,7 +128,7 @@ La classificazione è stata eseguita in tre passaggi:
 \end{frame}   
 
 \begin{frame}{Classificazione}
-La classificazione è stata eseguita nello stesso modo con cui si è lavorato per l'analisi dell'immagine del 2023
+La classificazione è stata eseguita nello stesso modo con cui si è lavorato per l'analisi dell'immagine del 2022
 \end{frame}
 
 \begin{frame}{3 passaggi}
